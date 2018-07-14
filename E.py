@@ -3,7 +3,7 @@ from pygame.locals import*
 
 FPS = 5
 FPS1=10
-WINDOWWIDTH = 1000
+WINDOWWIDTH = 700
 WINDOWHEIGHT = 700
 CELLSIZE = 20
 assert WINDOWWIDTH % CELLSIZE == 0, "Window width must be a multiple of cell size."
@@ -59,7 +59,7 @@ def runGame():
                     direction=DOWN
                 elif event.key==K_ESCAPE:
                     terminate()
-        if wormCoords[HEAD]['x']==-1 or wormCoords[HEAD]['x']==CELLWIDTH or wormCoords[HEAD]['y']==-1 or wormCoords[HEAD]['y']==CELLWIDTH:
+        if wormCoords[HEAD]['x']==0 or wormCoords[HEAD]['x']==CELLWIDTH-1 or wormCoords[HEAD]['y']==0 or wormCoords[HEAD]['y']==CELLWIDTH-1:
             return
         for wormBody in wormCoords[1:]:
             if wormBody ['x']==wormCoords[HEAD]['x'] and wormBody['y']==wormCoords[HEAD]['y']:
